@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+	<display-name>CRUDInServlets</display-name>
+  	<welcome-file-list>
+    	<welcome-file>NewFile.html</welcome-file>
+  	</welcome-file-list>
+  
+  	<servlet>
+  		<servlet-name>add</servlet-name>
+  		<servlet-class>AddEmployee</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>add</servlet-name>
+  		<url-pattern>/saveServlet</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>viewAll</servlet-name>
+  		<servlet-class>ViewAllEmployees</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>viewAll</servlet-name>
+  		<url-pattern>/viewEmployees</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>delete</servlet-name>
+  		<servlet-class>DeleteEmployee</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>delete</servlet-name>
+  		<url-pattern>/deleteEmployee</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>edit</servlet-name>
+  		<servlet-class>EditEmployee</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>edit</servlet-name>
+  		<url-pattern>/editEmployee</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>update</servlet-name>
+  		<servlet-class>EditSaveEmployee</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>update</servlet-name>
+  		<url-pattern>/saveEditEmployee</url-pattern>
+  	</servlet-mapping>
+  	
+  	<filter>
+  		<filter-name>editEmployeeFilter</filter-name>
+  		<filter-class>ViewAllEmployeeFilter</filter-class>
+  		<init-param>
+  			<param-name>FilterFor</param-name>
+  			<param-value>forEditRestrictionPurpose</param-value>
+  		</init-param>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>editEmployeeFilter</filter-name>
+  		<url-pattern>/editEmployee</url-pattern>
+  	</filter-mapping>
+  	
+  	<servlet>
+  		<servlet-name>logInServlet</servlet-name>
+  		<servlet-class>LogInUser</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>logInServlet</servlet-name>
+  		<url-pattern>/logIn</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+</web-app>
